@@ -47,7 +47,7 @@ public class impiccato {
 		{
 		//PROSSIMAMENTE: int pulsanti = JOptionPane.YES_NO_OPTION; // Pulsanti si/no
 		//PROSSIMAMENTE: int rispulsanti = JOptionPane.showConfirmDialog (null, "","Benvenuto",pulsanti); // Questa variabile salva la decisione che prossimamente verrà confrontata.
-		JOptionPane.showMessageDialog(null, "Benvenuto, stai per iniziare una nuova partita al gioco dell'impiccato! \n Non ricordi come si gioca? \n Un giocatore sceglie una parola, essa viene nascosta però come indizio c'è il numero delle lettere. \n Il nostro sistema le predispone automaticamente. \n L'altro giocatore, invece, dovrà trovare la parola. \n Ti chiederai: come? \n Chiamando delle lettere o parole. \n Alla fine riuscirai ad individuare la parola, scrivila nel campo testo e vincerai. \n (Se prima non hai esaurito tutti i tuoi tentativi (6)) ^_^\n Buon divertimento.");
+		JOptionPane.showMessageDialog(null, "Benvenuto, stai per iniziare una nuova partita al gioco dell'impiccato! \n Non ricordi come si gioca? \n Un giocatore sceglie una parola, essa viene nascosta però come indizio c'è il numero delle lettere. \n Il nostro sistema le predispone automaticamente. \n L'altro giocatore, invece, dovrà trovare la parola. \n Ti chiederai: come? \n Chiamando delle lettere o parole, fai attenzione alle maiuscole/minuscole. \n Alla fine riuscirai ad individuare la parola, scrivila nel campo testo e vincerai. \n (Se prima non hai esaurito tutti i tuoi tentativi (6)) ^_^\n Buon divertimento.");
 		frame = new JFrame("L'impiccato");
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(impiccato.class.getResource("/sbudiman/immagini/16x16.png")));
 		frame.setBounds(100, 100, 737, 350);
