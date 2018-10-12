@@ -117,7 +117,7 @@ public class impiccato {
 		label.setBackground(Color.ORANGE);
 		label.setAlignment(Label.CENTER);
 		label.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 12));
-		label.setBounds(290, 289, 421, 22);
+		label.setBounds(284, 289, 437, 22);
 		panel.add(label);
 		
 		//Listener
