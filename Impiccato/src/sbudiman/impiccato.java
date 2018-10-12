@@ -45,6 +45,8 @@ public class impiccato {
 
 		public impiccato()
 		{
+		//PROSSIMAMENTE: int pulsanti = JOptionPane.YES_NO_OPTION; // Pulsanti si/no
+		//PROSSIMAMENTE: int rispulsanti = JOptionPane.showConfirmDialog (null, "","Benvenuto",pulsanti); // Questa variabile salva la decisione che prossimamente verrà confrontata.
 		frame = new JFrame("L'impiccato");
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(impiccato.class.getResource("/sbudiman/immagini/16x16.png")));
 		frame.setBounds(100, 100, 737, 350);
@@ -170,6 +172,10 @@ public class impiccato {
             }
         });
 		//
+		
+		//PROSSIMAMENTE: if(rispulsanti == JOptionPane.YES_OPTION) // Condizione che verifica la risposta, se sì agisce impostando tutto in versione minimal
+		//{
+		//}
 	}
 
 	//Funzioni
