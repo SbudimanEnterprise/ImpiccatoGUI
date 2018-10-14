@@ -125,7 +125,7 @@ public class impiccato {
 		btnCrea.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
-				paroladaindovinare = tfparola.getText();
+				paroladaindovinare = tfparola.getText().toUpperCase();
 				tfparola.setText(null);
 				nuovaparola();
 				tfparola.setVisible(false);
@@ -138,7 +138,7 @@ public class impiccato {
 			{
 				controllino++;
 				int l = tfprova.getText().length();
-				if(talettere.getText().equalsIgnoreCase(tfprova.getText()))
+				if(talettere.getText().equalsIgnoreCase(tfprova.getText().toUpperCase()))
 				{
 					tfprova.setText("Hai già provato ad inserire questa lettera.");
 				}
@@ -222,8 +222,8 @@ public class impiccato {
 	
 	void nuovalettera()
 	{
-		tfprova.getText();
-		lettera=tfprova.getText();
+		tfprova.getText().toUpperCase();
+		lettera=tfprova.getText().toUpperCase();
 	}
 	
 	boolean confrontalettera(String lettera) 
@@ -237,7 +237,7 @@ public class impiccato {
 					
 					for(int i = 0; i < l; i++)
 					{
-						if(lettera.equalsIgnoreCase(String.valueOf(apdi[i])))
+						if(lettera.equalsIgnoreCase((String.valueOf(apdi[i]))))
 						{
 							lblp[i].setVisible(true);
 							System.out.println("[DEBUG]: Nella posizione "+i+" "+"è stata trovata una lettera");
@@ -259,7 +259,7 @@ public class impiccato {
 	boolean confrontaparola()
 	{
 		System.out.println("[DEBUG]: Funzione confrontaparola");
-		if(tfprova.getText().equalsIgnoreCase(paroladaindovinare))
+		if(tfprova.getText().toUpperCase().equalsIgnoreCase(paroladaindovinare))
 		{
 			vinto=true;
 			System.out.println("[DEBUG]: Hai vinto");
@@ -311,7 +311,7 @@ public class impiccato {
 				System.out.println("Incremento t");
 				t++;
 				lbltentativi.setText("Tentativi:"+t+"/6");
-				talettere.setText(talettere.getText()+tfprova.getText()+",");
+				talettere.setText(talettere.getText().toUpperCase()+tfprova.getText().toUpperCase()+",");
 			}
 			
 
@@ -325,7 +325,7 @@ public class impiccato {
 	boolean ParolaIndovinata()
 	{
 		System.out.println("[DEBUG]: Funzione ParolaIndovinata");
-		int l=paroladaindovinare.length();
+		int l=paroladaindovinare.toUpperCase().length();
 		if(vinto==true)
 		{
 			for(int i=0; i<l; i++)
