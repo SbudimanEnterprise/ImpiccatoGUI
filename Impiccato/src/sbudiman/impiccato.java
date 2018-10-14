@@ -33,6 +33,9 @@ public class impiccato {
 	int numerotentativi;
 	int t=0;
 	int controllino = 0;
+	int rispulsanti;
+	int pulsanti = JOptionPane.YES_NO_OPTION;
+	int sbudiman;
 	boolean vinto;
 	boolean supporto=false;
 	// 
@@ -43,11 +46,15 @@ public class impiccato {
 		window.frame.setVisible(true);
 	}
 
-		public impiccato()
-		{
-		//PROSSIMAMENTE: int pulsanti = JOptionPane.YES_NO_OPTION; // Pulsanti si/no
-		//PROSSIMAMENTE: int rispulsanti = JOptionPane.showConfirmDialog (null, "","Benvenuto",pulsanti); // Questa variabile salva la decisione che prossimamente verrà confrontata.
-		JOptionPane.showMessageDialog(null, "Benvenuto, stai per iniziare una nuova partita al gioco dell'impiccato! \n Non ricordi come si gioca? \n Un giocatore sceglie una parola, essa viene nascosta però come indizio c'è il numero delle lettere. \n Il nostro sistema le predispone automaticamente. \n L'altro giocatore, invece, dovrà trovare la parola. \n Ti chiederai: come? \n Chiamando delle lettere o parole, fai attenzione alle maiuscole/minuscole. \n Alla fine riuscirai ad individuare la parola, scrivila nel campo testo e vincerai. \n (Se prima non hai esaurito tutti i tuoi tentativi (6)) ^_^\n Buon divertimento.");
+public impiccato()
+{
+	rispulsanti = JOptionPane.showConfirmDialog (null, "Benvenuto, stai per iniziare una nuova partita al gioco dell'impiccato! \n Non ricordi come si gioca? \n Un giocatore sceglie una parola, essa viene nascosta però come indizio c'è il numero delle lettere. \n Il nostro sistema le predispone automaticamente. \n L'altro giocatore, invece, dovrà trovare la parola. \n Ti chiederai: come? \n Chiamando delle lettere o parole, fai attenzione alle maiuscole/minuscole. \n Alla fine riuscirai ad individuare la parola, scrivila nel campo testo e vincerai. \n (Se prima non hai esaurito tutti i tuoi tentativi (6)) ^_^ \n Sei pronto? \n Buon divertimento!!","Ciao!",pulsanti); // Questa variabile salva la decisione che prossimamente verrà confrontata.
+	if(rispulsanti == JOptionPane.NO_OPTION)
+	{
+			frame.dispose();
+	}
+	else
+	{
 		frame = new JFrame("L'impiccato");
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(impiccato.class.getResource("/sbudiman/immagini/16x16.png")));
 		frame.setBounds(100, 100, 737, 350);
@@ -172,12 +179,8 @@ public class impiccato {
                 tfparola.setText("");
             }
         });
-		//
-		
-		//PROSSIMAMENTE: if(rispulsanti == JOptionPane.YES_OPTION) // Condizione che verifica la risposta, se sì agisce impostando tutto in versione minimal
-		//{
-		//}
 	}
+}
 
 	//Funzioni
 	void nuovaparola() 
@@ -332,8 +335,18 @@ public class impiccato {
 			{
 			lblp[i].setVisible(true);
 			}
-			JOptionPane.showMessageDialog(null, "Hai vinto, sei uno sbudiman bello");
-			frame.dispose();
+			rispulsanti = JOptionPane.showConfirmDialog (null, "Hai vinto, sei uno sbudiman bello \n Vuoi fare un'altra partita?","Complimenti!",pulsanti); // Questa variabile salva la decisione che prossimamente verrà confrontata.
+			if(rispulsanti == JOptionPane.YES_OPTION) // Condizione che verifica la risposta, se sì agisce impostando tutto in versione minimal
+			{
+				rispulsanti=0;
+				frame.dispose();
+				impiccato window = new impiccato();
+				window.frame.setVisible(true);
+			}
+			else
+			{
+				frame.dispose();
+			}
 		}
 		return false;
 	}
